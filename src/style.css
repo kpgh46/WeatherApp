@@ -24,6 +24,7 @@
     height: 55%;
     width: 55%;
     border: 1px solid black;
+    border-radius: 10px;
 }
 
 #five-day {
@@ -31,4 +32,5 @@
     width: 90%;
     height: 17%;
     border: 1px solid black;
+    border-radius: 10px;
 }
