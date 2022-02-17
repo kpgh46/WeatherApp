@@ -110,13 +110,33 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
+/***/ "./src/basicWeatherData.js":
+/*!*********************************!*\
+  !*** ./src/basicWeatherData.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"weatherData\": () => (/* binding */ weatherData)\n/* harmony export */ });\n\nlet weatherData = (() => {\n\n    let city = \"miami\"\n    let searchButton = document.querySelector('button');\n\n    async function getWeatherData() {\n        let getLatLon = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&APPID=93c35c8be20c0a03a7c89fef63a281a2` , {mode: 'cors'});\n        let convertLatLon = await getLatLon.json();\n\n        let lat = convertLatLon.coord.lat;\n        let lon = convertLatLon.coord.lon;\n\n        let getData = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=93c35c8be20c0a03a7c89fef63a281a2`)\n        let converData = await getData.json();\n\n        console.log(converData);\n    }\n\n    let updateCity = (value) => {\n        city = value;\n        return city;\n    }\n\n\n    return {getWeatherData, updateCity}\n\n})();\n\n\n\n//# sourceURL=webpack://weatherapp/./src/basicWeatherData.js?");
+
+/***/ }),
+
+/***/ "./src/dom.js":
+/*!********************!*\
+  !*** ./src/dom.js ***!
+  \********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"dom\": () => (/* binding */ dom)\n/* harmony export */ });\n/* harmony import */ var _basicWeatherData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./basicWeatherData */ \"./src/basicWeatherData.js\");\n\n\nlet dom = (() => {\n\n    let render = () => {\n        _basicWeatherData__WEBPACK_IMPORTED_MODULE_0__.weatherData.getWeatherData();\n    }\n    \n    return {render}\n\n})();\n\n\n\n//# sourceURL=webpack://weatherapp/./src/dom.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\nlet searchButton = document.querySelector('button');\nlet city;\n\nasync function getWeatherData() {\n    let getLatLon = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&APPID=93c35c8be20c0a03a7c89fef63a281a2` , {mode: 'cors'});\n    let convertLatLon = await getLatLon.json();\n\n    let lat = convertLatLon.coord.lat;\n    let lon = convertLatLon.coord.lon;\n\n    let getData = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=93c35c8be20c0a03a7c89fef63a281a2`)\n    let converData = await getData.json();\n\n    console.log(converData);\n}\n\n\n\n\n\n//Event Listener\nsearchButton.addEventListener(\"click\", () => {\n    city = document.querySelector(\"#search\").value;\n    getWeatherData();\n})\n\n\n\n\n//# sourceURL=webpack://weatherapp/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dom */ \"./src/dom.js\");\n/* harmony import */ var _basicWeatherData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./basicWeatherData */ \"./src/basicWeatherData.js\");\n\n\n\n\n_dom__WEBPACK_IMPORTED_MODULE_1__.dom.render();\n// console.log(weatherData.city)\n\ndocument.addEventListener(\"click\", (el) => {\n    if (el.target.id === \"btn\"){\n        _basicWeatherData__WEBPACK_IMPORTED_MODULE_2__.weatherData.updateCity(document.querySelector(\"#search\").value);\n        _dom__WEBPACK_IMPORTED_MODULE_1__.dom.render();\n    }\n})\n\n\n//# sourceURL=webpack://weatherapp/./src/index.js?");
 
 /***/ })
 
