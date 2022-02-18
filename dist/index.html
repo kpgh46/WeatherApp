@@ -4,18 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=PT+Serif&family=Signika:wght@400;500&display=swap" rel="stylesheet">
     <title>Weather App</title>
 </head>
 <body>
     <div id = "container">
-        <h1 id = "header"></h1>
+        <h1 id = "header">City here</h1>
 
         <input type = "text" id = "search" placeholder="enter city" for = "city-search" name = "city-search">
         <button id = "btn">Submit</button>
 
         <div id = "info">
             <div id = "temperature"></div>
-        
+            <div id = "high-low">H: <span id = "high"></span>L: <span id = "low"></span></div>
+            <br>
+            <div>Feels Like: <span id = "feels-like"></span></div>
+            <div>Humidity: <span id = "humidity"></span></div>
+            <div>Wind: <span id = "wind"></span></div>
+            <div>Sun: <span id = "sun"></span></div>
         </div>
 
         <div id = "five-day">

@@ -25,6 +25,11 @@
     width: 55%;
     border: 1px solid black;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    align-items: center;
+    
 }
 
 #five-day {
@@ -33,4 +38,20 @@
     height: 17%;
     border: 1px solid black;
     border-radius: 10px;
+}
+
+#temperature {
+    color: black;
+    font-family: 'Signika', sans-serif;
+    font-size: 50px;
+
+}
+
+#high-low {
+    font-size: 13px;
+    /* margin-top: 0px; */
+}
+
+#high {
+    padding-right: 5px;
 }

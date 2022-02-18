@@ -7,7 +7,11 @@ dom.render();
 
 document.addEventListener("click", (el) => {
     if (el.target.id === "btn"){
-        weatherData.updateCity(document.querySelector("#search").value);
+        let currentCity = document.querySelector("#search").value
+        
+        weatherData.updateCity(currentCity);
+        dom.headerDiv(currentCity)
         weatherData.getWeatherData();
+
     }
 })
