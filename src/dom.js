@@ -5,8 +5,13 @@ let dom = (() => {
     let render = () => {
         weatherData.getWeatherData();
     }
+
+    let tempDiv = (value) => {
+        let div = document.querySelector("#temperature");
+        div.textContent = value.toString();
+    }
     
-    return {render}
+    return {render, tempDiv}
 
 })();
 

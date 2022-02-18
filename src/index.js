@@ -8,6 +8,6 @@ dom.render();
 document.addEventListener("click", (el) => {
     if (el.target.id === "btn"){
         weatherData.updateCity(document.querySelector("#search").value);
-        dom.render();
+        weatherData.getWeatherData();
     }
 })
