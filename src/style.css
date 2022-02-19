@@ -62,4 +62,24 @@
     width: 21%;
     height: 100%;
     border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.days>h3{
+    color:red;
+    margin-top: 0;
+    margin-bottom: 3px;
+    font-size: 18px;
+}
+
+.days>div:first-of-type{
+    color:blue;
+    font-size: 30px;
+    padding-top: 2px;
+}
+
+.days>div{
+    font-size: 12px;
 }
