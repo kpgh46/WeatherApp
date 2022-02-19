@@ -6,18 +6,17 @@ let dom = (() => {
         weatherData.getWeatherData();
     }
 
-    // let createDivs = (temperature, high, low,)
+    function createDivs(temperature, high, low, feels, humidity, wind) {
+        let args = [...arguments];
+        let selectors = ["#temperature", "#high", "#low", "#feels-like", "#humidity", "#wind"];
 
-    let tempDiv = (value) => {
-        let div = document.querySelector("#temperature");
-        div.textContent = value.toString();
-    }
+        for (let i = 0; i < args.length; i++) {
+            let div = document.querySelector(`${selectors[i]}`);
+            div.textContent = args[i];
+            if (selectors[i] === "#temperature" || selectors[i] === "#high" || selectors[i] === "#low" || selectors[i] === "#feels-like")
+            div.textContent += "\u00B0";
+        }
 
-    let highLowDiv = (max, min) => {
-        let high = document.querySelector("#high");
-        let low = document.querySelector("#low");
-        high.textContent = max.toString();
-        low.textContent = min.toString();
     }
 
     let headerDiv = (value) => {
@@ -25,7 +24,7 @@ let dom = (() => {
         header.textContent = value.toUpperCase();
     }
     
-    return {render, tempDiv, headerDiv, highLowDiv}
+    return {render, headerDiv, createDivs}
 
 })();
 
