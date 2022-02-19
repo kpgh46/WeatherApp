@@ -1,4 +1,5 @@
 import { weatherData } from "./basicWeatherData";
+import { addDays, addMonths, format} from 'date-fns';
 
 let dom = (() => {
 
@@ -19,12 +20,44 @@ let dom = (() => {
 
     }
 
+    let createFiveDay = (daily) => {
+        let fiveDay = ["#one", "#two", "#three", "#four", "#five"];
+
+        for (let i = 0; i < fiveDay.length; i++) {
+            let div = document.querySelector(`${fiveDay[i]}`);
+
+            //day
+            let headerDiv = document.createElement('h3');
+            let now = new Date();
+            let newDate = addDays(now,i+1);
+            let formattedDate = format(newDate, "EEEE");
+            headerDiv.textContent = formattedDate;
+
+            //max temp
+            let maxTempDiv = document.createElement('div')
+            maxTempDiv.textContent = daily[i].temp.max;
+            maxTempDiv.textContent += "\u00B0";
+
+            //min temp
+            let minTempDiv = document.createElement('div')
+            minTempDiv.textContent = daily[i].temp.min;
+            minTempDiv.textContent += "\u00B0";
+
+            //append
+            div.appendChild(headerDiv)
+            div.appendChild(maxTempDiv);
+            div.appendChild(minTempDiv)
+
+        }
+
+    }
+
     let headerDiv = (value) => {
         let header = document.querySelector("#header");
         header.textContent = value.toUpperCase();
     }
     
-    return {render, headerDiv, createDivs}
+    return {render, headerDiv, createDivs, createFiveDay}
 
 })();
 

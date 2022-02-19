@@ -21,7 +21,7 @@
 
 #info {
     margin-top: 50px;
-    height: 55%;
+    height: 45%;
     width: 55%;
     border: 1px solid black;
     border-radius: 10px;
@@ -38,7 +38,9 @@
     height: 17%;
     border: 1px solid black;
     border-radius: 10px;
+    display: flex;
 }
+
 
 #temperature {
     color: black;
@@ -54,4 +56,10 @@
 
 #high {
     padding-right: 5px;
+}
+
+.days {
+    width: 21%;
+    height: 100%;
+    border: 1px solid red;
 }

@@ -1,4 +1,5 @@
 import {dom} from './dom';
+import { addDays, addMonths, format} from 'date-fns';
 
 let weatherData = (() => {
 
@@ -21,10 +22,18 @@ let weatherData = (() => {
         let feels = converData.current.feels_like;
         let humidity = converData.current.humidity;
         let wind = converData.current.wind_speed;
+        let daily = converData.daily;
 
-        dom.createDivs(temp, high, low, feels, humidity, wind)
+        dom.createDivs(temp, high, low, feels, humidity, wind);
+        dom.createFiveDay(daily);
+        
 
         console.log(converData)
+        // let now = new Date();
+        // let tomorrow = addDays(now,2);
+        // console.log(tomorrow);
+        // let tomFormatted = format(tomorrow, "EEEE");
+        // console.log(tomFormatted)
     }
 
     let updateCity = (value) => {
