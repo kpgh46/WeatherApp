@@ -133,3 +133,8 @@
 .fa-solid{
     font-size: 35px;
 }
+
+#five-day .fa-solid {
+    padding-top: 10px;
+    font-size: 18px;
+}

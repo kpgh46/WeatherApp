@@ -24,8 +24,9 @@ let weatherData = (() => {
         let humidity = converData.current.humidity;
         let wind = converData.current.wind_speed;
         let daily = converData.daily;
+        let rain = converData.daily[0].pop;
 
-        dom.createDivs(temp, high, low, feels, humidity, wind);
+        dom.createDivs(temp, high, low, feels, humidity, wind, rain);
         dom.createFiveDay(daily);
         
 
