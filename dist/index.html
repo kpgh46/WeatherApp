@@ -4,29 +4,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=PT+Serif&family=Signika:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/908bab4e98.js" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=PT+Serif&family=Signika:wght@400;500&display=swap" rel="stylesheet">
+
     <title>Weather App</title>
 </head>
 <body>
     <div id = "container">
         <h1 id = "header">City here</h1>
-
+        <!-- <i class="fas fa-solid fa-cloud-sun-rain"></i>
+        <i class="fas fa-solid fa-snowflake"></i>
+        <i class="fas fa-solid fa-cloud-showers-heavy"></i>
+        <i class="fas fa-solid fa-cloud"></i>
+        
+        <i class="fa-solid fa-sun"></i>
+        
+        
+        <i class="fa-solid fa-percent"></i> -->
+        
+        
+        
         <input type = "text" id = "search" placeholder="enter city" for = "city-search" name = "city-search">
         <button id = "btn">Submit</button>
+        
 
         <div id = "info">
             <div id = "temperature"></div>
             <div id = "high-low">H: <span id = "high"></span>L: <span id = "low"></span></div>
             <br>
-            <div>Feels Like: <span id = "feels-like"></span></div>
-            <div>Humidity: <span id = "humidity"></span></div>
-            <div>Wind: <span id = "wind"></span></div>
+
+
+            <div id = "specific">
+                <div id = "specific-left" class = "specific-details">
+
+                    <div class = "icon-box">
+                        <i class="fa-solid fa-temperature-half"></i>
+                        <div class = "icon-details">
+                            <div>Feels Like</div>
+                            <span id = "feels-like"></span>
+                        </div>
+                    </div>
+
+                    <div class = "icon-box">
+                        <i class="fa-solid fa-droplet"></i>
+                        <div class = "icon-details">
+                            <div>Humidity</div> 
+                            <span id = "humidity"></span>
+                        </div> 
+                    </div>
+
+                </div> 
+
+                <div id = "specific-right" class = "specific-details">
+
+                    <div class = "icon-box">
+                        <i class="fa fa-solid fa-wind"></i>
+                        <div class = "icon-details">
+                            <div>Wind</div> 
+                            <span id = "wind"></span>
+                        </div>
+                    </div>
+
+                    <div class = "icon-box">
+                        <i class="fa-solid fa-cloud-rain"></i>
+                        <div class = "icon-details">
+                            <div>Rain</div>
+                            <span id = "wind"></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
             
         </div>
 

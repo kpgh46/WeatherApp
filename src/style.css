@@ -1,3 +1,7 @@
+/* body {
+    font-family: 'Signika', sans-serif;
+} */
+
 #container {
     height: 650px;
     display: flex;
@@ -22,7 +26,7 @@
 #info {
     margin-top: 50px;
     height: 45%;
-    width: 55%;
+    width: 70%;
     border: 1px solid black;
     border-radius: 10px;
     display: flex;
@@ -82,4 +86,50 @@
 
 .days>div{
     font-size: 12px;
+}
+
+#specific {
+    display: flex;
+    border: 1px solid red;
+    height: 200px;
+    width: 85%;
+    align-items: center;
+    
+}
+
+#specific-left {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    height: 170px;
+    width: 48%;
+    justify-content: space-between;
+}
+
+
+#specific-right {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    height: 170px;
+    width: 48%;
+    justify-content: space-between;
+
+    
+}
+
+.icon-box{
+    display: flex;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.icon-details {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.fa-solid{
+    font-size: 35px;
 }

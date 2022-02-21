@@ -7,6 +7,7 @@ let weatherData = (() => {
     let searchButton = document.querySelector('button');
 
     async function getWeatherData() {
+        dom.clearFiveDay();
         let getLatLon = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&APPID=93c35c8be20c0a03a7c89fef63a281a2` , {mode: 'cors'});
         let convertLatLon = await getLatLon.json();
 
@@ -29,6 +30,7 @@ let weatherData = (() => {
         
 
         console.log(converData)
+        
         // let now = new Date();
         // let tomorrow = addDays(now,2);
         // console.log(tomorrow);

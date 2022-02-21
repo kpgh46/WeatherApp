@@ -2,12 +2,13 @@ import { weatherData } from "./basicWeatherData";
 import { addDays, addMonths, format} from 'date-fns';
 
 let dom = (() => {
+    let fiveDay = ["#one", "#two", "#three", "#four", "#five"];
 
     let render = () => {
         weatherData.getWeatherData();
     }
 
-    function createDivs(temperature, high, low, feels, humidity, wind) {
+    function createDivs(temperature, high, low, feels, humidity, wind,) {
         let args = [...arguments];
         let selectors = ["#temperature", "#high", "#low", "#feels-like", "#humidity", "#wind"];
 
@@ -21,7 +22,7 @@ let dom = (() => {
     }
 
     let createFiveDay = (daily) => {
-        let fiveDay = ["#one", "#two", "#three", "#four", "#five"];
+    
 
         for (let i = 0; i < fiveDay.length; i++) {
             let div = document.querySelector(`${fiveDay[i]}`);
@@ -52,12 +53,21 @@ let dom = (() => {
 
     }
 
+    let clearFiveDay = () => {
+        for (let i = 0; i < fiveDay.length; i++){
+        let div = document.querySelector(`${fiveDay[i]}`);
+            while(div.firstChild){
+                div.removeChild(div.firstChild)
+            }
+        }
+    }
+
     let headerDiv = (value) => {
         let header = document.querySelector("#header");
         header.textContent = value.toUpperCase();
     }
     
-    return {render, headerDiv, createDivs, createFiveDay}
+    return {render, headerDiv, createDivs, createFiveDay, clearFiveDay}
 
 })();
 
