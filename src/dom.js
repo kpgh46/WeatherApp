@@ -35,8 +35,9 @@ let dom = (() => {
         let currentHour = currentDate.getHours();
         let currentMinute = currentDate.getMinutes();
         let currentSeconds = currentDate.getSeconds();
+        let seconds = currentSeconds < 10 ? `0${currentSeconds}` : currentSeconds;
 
-        date.innerHTML = `Date: ${currentMonth} / ${currentDay} / ${currentYear} Time: ${currentHour}:${currentMinute}:${currentSeconds}`;
+        date.innerHTML = `Date: ${currentMonth} / ${currentDay} / ${currentYear} Time: ${currentHour}:${currentMinute}:${seconds}`;
         
     }
 
