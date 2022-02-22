@@ -10,7 +10,7 @@ let dom = (() => {
 
     function createDivs(temperature, high, low, feels, humidity, wind,) {
         let args = [...arguments];
-        let selectors = ["#temperature", "#high", "#low", "#feels-like", "#humidity", "#wind", "#rain"];
+        let selectors = ["#temperature", "#high", "#low", "#feels-like", "#humidity", "#wind", "#rain", "#date"];
 
         for (let i = 0; i < args.length; i++) {
             let div = document.querySelector(`${selectors[i]}`);
@@ -20,12 +20,28 @@ let dom = (() => {
             if(selectors[i] === "#rain" || selectors[i] === "#humidity" )
             div.textContent += "%";
         }
+    }
 
+    let currentDateTime = () => {
+        let currentDate = new Date();
+        let date = document.querySelector("#date");
+        
+        //Date
+        let currentMonth = currentDate.getMonth()+1;
+        let currentDay = currentDate.getDate();
+        let currentYear = currentDate.getFullYear();
+
+        //Time
+        let currentHour = currentDate.getHours();
+        let currentMinute = currentDate.getMinutes();
+        let currentSeconds = currentDate.getSeconds();
+
+        date.innerHTML = `Date: ${currentMonth} / ${currentDay} / ${currentYear} Time: ${currentHour}:${currentMinute}:${currentSeconds}`;
+        
     }
 
     let createFiveDay = (daily) => {
     
-
         for (let i = 0; i < fiveDay.length; i++) {
             let div = document.querySelector(`${fiveDay[i]}`);
 
@@ -85,7 +101,7 @@ let dom = (() => {
         header.textContent = value.toUpperCase();
     }
     
-    return {render, headerDiv, createDivs, createFiveDay, clearFiveDay}
+    return {render, headerDiv, createDivs, createFiveDay, clearFiveDay, currentDateTime}
 
 })();
 

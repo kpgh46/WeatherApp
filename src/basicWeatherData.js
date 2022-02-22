@@ -25,13 +25,16 @@ let weatherData = (() => {
         let wind = converData.current.wind_speed;
         let daily = converData.daily;
         let rain = converData.daily[0].pop;
+        // let date =  new Date().toLocaleString("en-US", {timeZone: "America/Chicago"})
 
         dom.createDivs(temp, high, low, feels, humidity, wind, rain);
         dom.createFiveDay(daily);
+        setInterval(dom.currentDateTime, 1000);
+
+        console.log(converData);
+    
         
 
-        console.log(converData)
-        
         // let now = new Date();
         // let tomorrow = addDays(now,2);
         // console.log(tomorrow);
